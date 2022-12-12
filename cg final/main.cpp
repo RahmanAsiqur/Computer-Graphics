@@ -12,6 +12,19 @@
 # define PI           3.14159265358979323846
 using namespace std;
 
+                                  /// It draws the sky
+void sky() {
+    glBegin(GL_QUADS);              /// glBegin specifies the type of geometric object
+    glColor3ub(98, 154, 214);        /// such as GL_POINTS , GL_LINES , GL_QUADS ,
+
+    glVertex2f(-2.0f, -0.1f);       /// squad er vertex 4 ta thke
+    glVertex2f(2.0f, -0.1f);
+    glVertex2f(2.0f, 2.0f);
+    glVertex2f(-2.0f, 2.0f);
+
+    glEnd();                           ///The glBegin and glEnd functions delimit the vertices
+                                        ///that define a primitive or a group of like primitives
+}
 void memorial() {
     glBegin(GL_TRIANGLES);
     glColor3ub(166, 166, 166);
@@ -616,6 +629,8 @@ void day()
     glPopMatrix();
     glScalef(.7,.7,0);
     glTranslatef(0.0f, -0.05f, 0.0f);
+
+    sky();
     memorial();
     flag();
     road();
